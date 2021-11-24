@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "_head.html" %}
+</head>
+<body>
+
+{% include "_header.html" %}
+
+<section>
+    <div class="container fix-height">
+        <h1>大人の方向けのページ</h1>
+
+        <p>
+            麻生餃子APIでは通常のエンドポイントにアクセスすると、お酒のメニューを除いたメニューのみが表示されるようになっています。
+            これは中高生が使用することを想定しているためです。
+            ですが、20歳以上の方にも楽しく使っていただきたいので、全てのメニューが表示されるエンドポイントを別に用意しました。<br>
+        </p>
+
+        <h3>カテゴリーAPI</h3>
+
+        <h4>リクエストURL</h4>
+        <p>カテゴリー1件取得</p>
+        <pre>/api/v1/category/{カテゴリーID}</pre>
+        <p>カテゴリー全件取得</p>
+        <pre>/api/v1/category</pre>
+
+        <h4>レスポンス</h4>
+        <p>JSON形式</p>
+
+        <h3>メニューAPI</h3>
+
+        <h4>リクエストURL</h4>
+        <p>メニュー1件取得</p>
+        <pre>/api/v1/menu/{メニューID}</pre>
+        <p>メニュー複数取得</p>
+        <pre>/api/v1/menu</pre>
+
+        <h4>レスポンス</h4>
+        <p>JSON形式</p>
+
+        <h4>パラメータ</h4>
+        <p>
+            クエリパラメータを指定することで、条件にあったメニュー情報のみをレスポンスします。
+        <table>
+            <thead>
+            <tr>
+                <th>パラメータ</th>
+                <th>必須</th>
+                <th>備考</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>name</td>
+                <td></td>
+                <td>メニュー名で部分一致検索ができます。</td>
+            </tr>
+            <tr>
+                <td>category_id</td>
+                <td></td>
+                <td>指定したカテゴリーIDのメニューを返します。</td>
+            </tr>
+            <tr>
+                <td>price</td>
+                <td></td>
+                <td>指定された金額のメニューを返します。</td>
+            </tr>
+            </tbody>
+        </table>
+        </p>
+        <br>
+
+        <p>
+            お酒は20歳になってから！<br>
+        </p>
+
+    </div>
+</section>
+
+{% include "_footer.html" %}
+
+</body>
+</html>

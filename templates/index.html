@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    {% include "_head.html" %}
+</head>
+<body>
+
+<section id="key-visual" class="colorful">
+    <div id="gyoza_player">
+        <div class="overlay"></div>
+    </div>
+
+    <div class="title">麻布餃子API</div>
+</section>
+
+<section>
+    <div class="container">
+        <h1>麻布餃子APIにようこそ！</h1>
+        <p>
+            このAPIは白金高輪にあるおいしい餃子屋さん『麻布餃子』のメニュー情報を提供するAPIです。<br>
+            インターンの友達と毎週通っている、超絶お気に入りのお店です！行ったことがない人はぜひ1度行ってみてください！！<br>
+            <br>
+            APIってない？という方は、まずAPIの仕組みを知るところから始めてみてください。<br>
+            API大好きな上級者の方は、このAPIを使って面白いサービスをたくさん作っていください！<br>
+            面白い作品がたくさんできるのを楽しみにしてま〜す！<br>
+            <br>
+        </p>
+    </div>
+</section>
+
+<section class="coral">
+    <div id="about" class="container flex">
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.0172314308206!2d139.73371696579568!3d35.65194708918404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b8826d844b3%3A0x49100f98342ca024!2z44Ov44Kk44Oz44OQ44O86bq75biD6aSD5a2Q!5e0!3m2!1sja!2sjp!4v1637247415688!5m2!1sja!2sjp"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div>
+            <h2 class="text-right">麻布餃子とは？</h2>
+            <p>
+                麻布餃子は白金高輪にある餃子屋さんです。とてもおいしい餃子と中華料理が楽しめてしかもリーズナブルなのが最高にいいポイント！<br>
+                今年になってから中華だけでなく焼肉やワインが楽しめるお店になっていて新しいメニューが追加されました。<br>
+                このAPIでは新しくなる前のメニュー情報を提供しています。<br>
+                ぜひ一度行ってみてください〜<br>
+                <br>
+                <div class="text-right">
+                    <a href="https://tabelog.com/tokyo/A1307/A130702/13142179/" target="_blank">食べログ</a>
+                </div>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <h2>API基本仕様</h2>
+
+        <h3>カテゴリーAPI</h3>
+        <p>
+            メニューのカテゴリー情報を提供するAPIです。<br>
+            IDを指定すると、対応するカテゴリ1つのみを返します。
+        </p>
+
+        <h4>リクエストURL</h4>
+        <p>カテゴリー1件取得</p>
+        <pre>/api/category/{カテゴリーID}</pre>
+        <p>カテゴリー全件取得</p>
+        <pre>/api/category</pre>
+
+        <h4>レスポンス</h4>
+        <p>JSON形式</p>
+
+        <h3>メニューAPI</h3>
+        <p>
+            メニュー情報を提供するAPIです。<br>
+            IDを指定すると、対応するメニュー1つだけを返します。<br>
+            パラメータを指定するとその条件に一致するメニューを返します。
+        </p>
+
+        <h4>リクエストURL</h4>
+        <p>メニュー1件取得</p>
+        <pre>/api/menu/{メニューID}</pre>
+        <p>メニュー複数取得</p>
+        <pre>/api/menu</pre>
+
+        <h4>レスポンス</h4>
+        <p>JSON形式</p>
+
+        <h4>パラメータ</h4>
+        <p>
+            クエリパラメータを指定することで、条件にあったメニュー情報のみをレスポンスします。
+        <table>
+            <thead>
+            <tr>
+                <th>パラメータ</th>
+                <th>必須</th>
+                <th>備考</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>name</td>
+                <td></td>
+                <td>メニュー名で部分一致検索ができます。</td>
+            </tr>
+            <tr>
+                <td>category_id</td>
+                <td></td>
+                <td>指定したカテゴリーIDのメニューを返します。</td>
+            </tr>
+            <tr>
+                <td>price</td>
+                <td></td>
+                <td>指定された金額のメニューを返します。</td>
+            </tr>
+            </tbody>
+        </table>
+        </p>
+        <br>
+
+        <p>
+            作品を作ったらぜひ教えてください！<br>
+            楽しみにしてます！！<br>
+            <br>
+            20歳以上の方は下のボタンを押してみてください。
+        </p>
+
+        <div class="over-20">
+            <button class="">20歳以上の方はこちら</button>
+        </div>
+
+    </div>
+</section>
+
+{% include "_footer.html" %}
+
+</body>
+</html>

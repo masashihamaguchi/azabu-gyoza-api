@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include "_head.html" %}
+</head>
+<body>
+
+{% include "_header.html" %}
+
+<section>
+    <div class="container text-center flex flex-center fix-height">
+        <div>
+            <h4>{{ error }}</h4>
+            <h2>{{ title|safe }}</h2>
+            <div class="space pc"></div>
+
+            {% if image %}
+                <img src="/static/img/food_character_gyouza.png" width="200" alt="food_character_gyouza.png">
+            {% else %}
+                <img src="/static/img/food_character_gyouza_suigyouza.png" width="200" alt="food_character_gyouza.png">
+            {% endif %}
+
+            <div class="space pc"></div>
+            <p>{{ message }}</p>
+        </div>
+    </div>
+</section>
+
+{% include "_footer.html" %}
+
+</body>
+</html>
